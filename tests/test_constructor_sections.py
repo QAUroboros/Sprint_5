@@ -7,9 +7,9 @@ from locators import *
 
 def test_constructor_sauces_section(open_browser):
     driver = open_browser
-    sauces_section = driver.find_element(By.XPATH,"//span[text()='Соусы']")
+    sauces_section = driver.find_element(*SAUCES_SECTION)
     sauces_section.click()
-    sauces_header = driver.find_element(By.XPATH, "//h2[text()='Соусы']")
+    sauces_header = driver.find_element(*SAUCES_HEADER)
     sauce_1 = driver.find_element(By.XPATH, "//p[text()='Соус Spicy-X']")
     sauce_2 = driver.find_element(By.XPATH, "//p[text()='Соус фирменный Space Sauce']")
     sauce_3 = driver.find_element(By.XPATH, "//p[text()='Соус традиционный галактический']")

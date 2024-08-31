@@ -2,17 +2,16 @@ from selenium.webdriver.common.by import By
 
 
 LOGIN_PAGE_LINK = (By.XPATH, "//a[contains(@href, '/account')]//p[contains(text(), 'Личный Кабинет')]")  # Ссылка на страницу личного кабинета
-REGISTER_PAGE_LINK = (By.XPATH, "//a[@class='Auth_link__1fOlj']/p[text()='Зарегистрироваться']")  # Ссылка на страницу регистрации
+REGISTER_PAGE_LINK = (By.XPATH, "//a[@class='Auth_link__1fOlj']")  # Ссылка на страницу регистрации
+LOGIN_LINK = (By.XPATH, "//a[contains(text(), 'Войти')]") # Ссылка в форме регистрации на войти
+FORGOT_LINK = (By.XPATH, "//a[contains(text(), 'Восстановить пароль')]") # Ссылка в форме регистрации на восстановить пароль
+BUTTON_RESTORE = (By.CSS_SELECTOR,".button_button__33qZ0.button_button_type_primary__1O7Bx.button_button_size_medium__3zxIa") #Кнопка восстановить при восстановлении пароля
 NAME_FIELD = (By.XPATH, "//input[@name='name']")  # Поле для ввода имени
-EMAIL_FIELD = (By.XPATH, "//input[@name='email']")  # Поле для ввода email
-PASSWORD_FIELD = (By.XPATH, "//input[@name='password']")  # Поле для ввода пароля
-REGISTER_BUTTON = (By.XPATH, "//button[text()='Зарегистрироваться']")  # Кнопка "Зарегистрироваться"
-REGISTRATION_ERROR_MESSAGE = (By.XPATH, "//p[@class='input__error text_type_main-default']")  # Сообщение об ошибке при регистрации
-LOGIN_BUTTON_MAIN = (By.CLASS_NAME, "button_button__33qZ0")  # Кнопка "Войти в аккаунт" на главной странице
 EMAIL_FIELD_LOGIN = (By.XPATH, "//div[contains(@class, 'input_type_text')]//input[@name='name']")  # Поле для ввода email на странице входа
 PASSWORD_FIELD_LOGIN = (By.XPATH, "//input[@name='Пароль']")  # Поле для ввода пароля на странице входа
+REGISTRATION_ERROR_MESSAGE = (By.XPATH, "//p[@class='input__error text_type_main-default']")  # Сообщение об ошибке при регистрации
+LOGIN_BUTTON_MAIN = (By.CLASS_NAME, "button_button__33qZ0")  # Кнопка "Войти в аккаунт" на главной странице
 LOGIN_BUTTON_LOGIN = (By.XPATH, "//button[text()='Войти']")  # Кнопка "Войти" на странице входа
-PERSONAL_ACCOUNT_BUTTON = (By.CLASS_NAME, "button_button__33qZ0")  # Кнопка перехода в личный кабинет
 PASSWORD_FIELD_PERSONAL_ACCOUNT = (By.XPATH, "//input[@name='Пароль']")  # Поле для ввода пароля в личном кабинете
 SAVE_BUTTON_PERSONAL_ACCOUNT = (By.XPATH, "//button[text()='Сохранить']")  # Кнопка "Сохранить" в личном кабинете
 CONSTRUCTOR_PERSONAL_ACCOUNT_BUTTON = (By.CLASS_NAME, "button_button__33qZ0")  # Кнопка перехода в конструктор в личном кабинете
