@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-LOGIN_PAGE_LINK = (By.XPATH, "//a[@class='AppHeader_header__link__3D_hX']/p[text()='Личный Кабинет']")  # Ссылка на страницу личного кабинета
+LOGIN_PAGE_LINK = (By.XPATH, "//a[contains(@href, '/account')]//p[contains(text(), 'Личный Кабинет')]")  # Ссылка на страницу личного кабинета
 REGISTER_PAGE_LINK = (By.XPATH, "//a[@class='Auth_link__1fOlj']/p[text()='Зарегистрироваться']")  # Ссылка на страницу регистрации
 NAME_FIELD = (By.XPATH, "//input[@name='name']")  # Поле для ввода имени
 EMAIL_FIELD = (By.XPATH, "//input[@name='email']")  # Поле для ввода email
