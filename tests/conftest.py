@@ -19,7 +19,7 @@ def open_browser():
 def registration_data():
     return {
         "name": "Артём",
-        "email": "ArtemKrivoshein13699@yandex.ru",
+        "email": "ArtemKrivoshein13799@yandex.ru",
         "password": "123456"
     }
 
