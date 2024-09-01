@@ -20,7 +20,7 @@ PASSWORD_FIELD_PERSONAL_ACCOUNT = (By.XPATH, "//input[@name='Пароль']")  #
 SAVE_BUTTON_PERSONAL_ACCOUNT = (By.XPATH, "//button[text()='Сохранить']")  # Кнопка "Сохранить" в личном кабинете
 CONSTRUCTOR_PERSONAL_ACCOUNT_BUTTON = (By.CLASS_NAME, "button_button__33qZ0")  # Кнопка перехода в конструктор в личном кабинете
 PASSWORD_FIELD_CONSTRUCTOR = (By.XPATH, "//input[@name='Пароль']")  # Поле для ввода пароля в конструкторе
-LOGOUT_BUTTON = (By.XPATH, "//button[text()='Выйти']")  # Кнопка "Выйти" из личного кабинета
+LOGOUT_BUTTON = (By.XPATH, "//button[contains(@class, 'Account_button__')]")  # Кнопка "Выйти" из личного кабинета
 SAUCES_SECTION = (By.XPATH, "//span[text()='Соусы']")  # Секция "Соусы" в конструкторе
 SAUCES_HEADER = (By.XPATH, "//h2[text()='Соусы']")  # Заголовок секции "Соусы"
 SAUCE_SPICY_X = (By.XPATH, "//p[text()='Соус Spicy-X']")  # Ингредиент "Соус Spicy-X"
@@ -28,3 +28,4 @@ SAUCE_SPACE_SAUCE = (By.XPATH, "//p[text()='Соус фирменный Space Sa
 SAUCE_GALACTIC = (By.XPATH, "//p[text()='Соус традиционный галактический']")  # Ингредиент "Соус традиционный галактический"
 BUTTON_CONSTRUCTOR = (By.XPATH, "//p[contains(text(), 'Конструктор')]") # Переход по кнопке "конструктор"
 BURGER_ELEMENT_TXT = (By.XPATH, "//h1[contains(@class, 'text_type_main-large') and contains(text(), 'Соберите бургер')]") #Проверка отображения видимости элемента
+HEADER_LOGIN = (By.XPATH, "//h2[text()='Вход']") # Заголовок "Вход"
