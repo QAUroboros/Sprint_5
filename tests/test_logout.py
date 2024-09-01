@@ -21,5 +21,5 @@ def test_logout_personal_account(open_browser,registration_data):
     time.sleep(4)
     logout_button = driver.find_element(*LOGOUT_BUTTON)
     logout_button.click()
-    login_header = driver.find_element(By.XPATH, "//h2[text()='Вход']")
+    login_header = driver.find_element(*HEADER_LOGIN)
     assert login_header.is_displayed(), "Заголовок 'Вход' не появился после выхода"
