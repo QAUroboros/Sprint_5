@@ -19,5 +19,5 @@ def test_check_personal_account(open_browser, registration_data):
     login_to_click = driver.find_element(*LOGIN_PAGE_LINK)
     login_to_click.click()
     time.sleep(2)
-    text_profile = driver.find_element(By.TAG_NAME, "body").text
+    text_profile = driver.find_element(*PROFILE_TXT).text
     assert "Профиль" in text_profile, "Текст 'Профиль' не найден на странице."
