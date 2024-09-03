@@ -1,7 +1,10 @@
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
 from locators import *
 from constants import REGISTRATION_DATA
+
 
 
 def test_check_personal_account(open_browser):
@@ -18,5 +21,5 @@ def test_check_personal_account(open_browser):
     login_to_click.click()
     constructor_link = driver.find_element(*BUTTON_CONSTRUCTOR)
     constructor_link.click()
-    burger_text_element = driver.find_element(*BURGER_ELEMENT_TXT)
+    burger_text_element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located(BURGER_ELEMENT_TXT))
     assert burger_text_element.is_displayed(), "Заголовок 'Соберите бургер' не отображается на странице"
