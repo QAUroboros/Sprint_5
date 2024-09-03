@@ -1,12 +1,14 @@
 import time
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
 from locators import *
 from constants import REGISTRATION_DATA
 
 
 
-def test_check_personal_account(open_browser):
+def test_check_personal_account(open_browser,generate_registration_data):
     driver = open_browser
     driver.implicitly_wait(10)
     login_button_main = driver.find_element(*LOGIN_BUTTON_MAIN)
@@ -20,6 +22,5 @@ def test_check_personal_account(open_browser):
     time.sleep(3)
     login_to_click = driver.find_element(*LOGIN_PAGE_LINK)
     login_to_click.click()
-    time.sleep(2)
-    text_profile = driver.find_element(*PROFILE_TXT).text
-    assert "Профиль" in text_profile, "Текст 'Профиль' не найден на странице."
+    profile_element = WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located((PROFILE_TXT)))
+    assert profile_element.is_displayed(), "Элемент 'Профиль' не отображается на странице."
