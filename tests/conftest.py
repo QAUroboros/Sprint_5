@@ -13,20 +13,3 @@ def open_browser():
     WebDriverWait(driver, 10)
     yield driver
     driver.quit()
-
-
-@pytest.fixture
-def registration_data():
-    return {
-        "name": "Артём",
-        "email": "ArtemKrivoshein13799@yandex.ru",
-        "password": "123456"
-    }
-
-@pytest.fixture
-def bad_registration_data_in_password():
-    return {
-        "name": "Артём",
-        "email": "ArtemKrivoshein13459@yandex.ru",
-        "password": "123"
-    }

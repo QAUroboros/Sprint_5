@@ -4,9 +4,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from locators import *
+from constants import REGISTRATION_DATA
+from constants import BAD_REGISTRATION_DATA_IN_PASSWORD
 
 
-def test_fill_registration_form(open_browser, registration_data):
+def test_fill_registration_form(open_browser):
     driver = open_browser
     driver.implicitly_wait(10)
     login_to_click = driver.find_element(*LOGIN_PAGE_LINK)
@@ -14,16 +16,16 @@ def test_fill_registration_form(open_browser, registration_data):
     register_to_click = driver.find_element(*REGISTER_PAGE_LINK)
     register_to_click.click()
     name_field = driver.find_element(*NAME_FIELD)
-    name_field.send_keys(registration_data["name"])
+    name_field.send_keys(REGISTRATION_DATA["name"])
     email_field_auth = driver.find_element(*EMAIL_FIELD)
-    email_field_auth.send_keys(registration_data["email"])
+    email_field_auth.send_keys(REGISTRATION_DATA["email"])
     password_field_auth = driver.find_element(*PASSWORD_FIELD_LOGIN)
-    password_field_auth.send_keys(registration_data["password"])
+    password_field_auth.send_keys(REGISTRATION_DATA["password"])
     button = driver.find_element(*BUTTON_REGISTRATION)
     button.click()
 
 
-def test_failed_registration_form(open_browser, bad_registration_data_in_password):
+def test_failed_registration_form(open_browser):
     driver = open_browser
     wait = WebDriverWait(driver, 7)
     login_to_click = driver.find_element(*LOGIN_PAGE_LINK)
@@ -31,11 +33,11 @@ def test_failed_registration_form(open_browser, bad_registration_data_in_passwor
     register_to_click = driver.find_element(*REGISTER_PAGE_LINK)
     register_to_click.click()
     name_field = driver.find_element(*NAME_FIELD)
-    name_field.send_keys(bad_registration_data_in_password["name"])
+    name_field.send_keys(BAD_REGISTRATION_DATA_IN_PASSWORD["name"])
     email_field_auth = driver.find_element(*EMAIL_FIELD)
-    email_field_auth.send_keys(bad_registration_data_in_password["email"])
+    email_field_auth.send_keys(BAD_REGISTRATION_DATA_IN_PASSWORD["email"])
     password_field_auth = driver.find_element(*PASSWORD_FIELD_LOGIN)
-    password_field_auth.send_keys(bad_registration_data_in_password["password"])
+    password_field_auth.send_keys(BAD_REGISTRATION_DATA_IN_PASSWORD["password"])
     button = driver.find_element(*BUTTON_REGISTRATION)
     button.click()
     time.sleep(4)
