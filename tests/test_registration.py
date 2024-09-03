@@ -6,9 +6,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from locators import *
 from constants import REGISTRATION_DATA
 from constants import BAD_REGISTRATION_DATA_IN_PASSWORD
+from conftest import generate_registration_data
 
 
-def test_fill_registration_form(open_browser):
+
+def test_fill_registration_form(open_browser, generate_registration_data):
     driver = open_browser
     driver.implicitly_wait(10)
     login_to_click = driver.find_element(*LOGIN_PAGE_LINK)
@@ -18,7 +20,8 @@ def test_fill_registration_form(open_browser):
     name_field = driver.find_element(*NAME_FIELD)
     name_field.send_keys(REGISTRATION_DATA["name"])
     email_field_auth = driver.find_element(*EMAIL_FIELD)
-    email_field_auth.send_keys(REGISTRATION_DATA["email"])
+    email_field_auth.send_keys(generate_registration_data["email"])
+    time.sleep(3)
     password_field_auth = driver.find_element(*PASSWORD_FIELD_LOGIN)
     password_field_auth.send_keys(REGISTRATION_DATA["password"])
     button = driver.find_element(*BUTTON_REGISTRATION)
