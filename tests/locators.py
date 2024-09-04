@@ -13,11 +13,9 @@ EMAIL_FIELD_LOGIN = (By.XPATH, "//div[contains(@class, 'input_type_text')]//inpu
 EMAIL_FIELD = (By.XPATH, "//div[label[contains(text(), 'Email')]]/input[@name='name']") # Для регистрации
 PASSWORD_FIELD_LOGIN = (By.XPATH, "//input[@name='Пароль']")  # Поле для ввода пароля на странице входа
 REGISTRATION_ERROR_MESSAGE = (By.XPATH, "//p[@class='input__error text_type_main-default' and text()='Некорректный пароль']")  # Сообщение об ошибке при регистрации
-LOGIN_BUTTON_MAIN = (By.CLASS_NAME, "button_button__33qZ0")  # Кнопка "Войти в аккаунт" на главной странице
 LOGIN_BUTTON_LOGIN = (By.XPATH, "//button[text()='Войти']")  # Кнопка "Войти" на странице входа
 PASSWORD_FIELD_PERSONAL_ACCOUNT = (By.XPATH, "//input[@name='Пароль']")  # Поле для ввода пароля в личном кабинете
 SAVE_BUTTON_PERSONAL_ACCOUNT = (By.XPATH, "//button[text()='Сохранить']")  # Кнопка "Сохранить" в личном кабинете
-CONSTRUCTOR_PERSONAL_ACCOUNT_BUTTON = (By.CLASS_NAME, "button_button__33qZ0")  # Кнопка перехода в конструктор в личном кабинете
 PASSWORD_FIELD_CONSTRUCTOR = (By.XPATH, "//input[@name='Пароль']")  # Поле для ввода пароля в конструкторе
 LOGOUT_BUTTON = (By.XPATH, "//button[contains(@class, 'Account_button__')]")  # Кнопка "Выйти" из личного кабинета
 SAUCES_SECTION = (By.XPATH, "//span[text()='Соусы']")  # Секция "Соусы" в конструкторе
@@ -31,3 +29,4 @@ TABS = {
     "sauces": (By.XPATH, "//div[span[text()='Соусы']]"),
     "fillings": (By.XPATH, "//div[span[text()='Начинки']]")
 }
+LOGIN_BUTTON_MAIN = (By.XPATH, "//button[contains(@class, 'button_button') and contains(@class, 'button_button_type_primary')]") # Кнопка "Войти в аккаунт" на главной странице
