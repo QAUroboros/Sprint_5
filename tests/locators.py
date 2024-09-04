@@ -6,7 +6,7 @@ LOGIN_PAGE_LINK = (By.XPATH, "//a[contains(@href, '/account')]//p[contains(text(
 REGISTER_PAGE_LINK = (By.XPATH, "//a[@class='Auth_link__1fOlj']")  # Ссылка на страницу регистрации
 LOGIN_LINK = (By.XPATH, "//a[contains(text(), 'Войти')]") # Ссылка в форме регистрации на войти
 FORGOT_LINK = (By.XPATH, "//a[contains(text(), 'Восстановить пароль')]") # Ссылка в форме регистрации на восстановить пароль
-BUTTON_RESTORE = (By.CSS_SELECTOR,".button_button__33qZ0.button_button_type_primary__1O7Bx.button_button_size_medium__3zxIa") #Кнопка восстановить при восстановлении пароля
+BUTTON_RESTORE = (By.XPATH, "//button[contains(@class, 'button_button') and contains(@class, 'button_button_type_primary') and contains(@class, 'button_button_size_medium') and text()='Восстановить']") #Кнопка восстановить при восстановлении пароля
 BUTTON_REGISTRATION = (By.XPATH, "//button[contains(text(), 'Зарегистрироваться')]") # Кнопка для регистрации
 NAME_FIELD = (By.XPATH, "//input[@name='name']")  # Поле для ввода имени
 EMAIL_FIELD_LOGIN = (By.XPATH, "//div[contains(@class, 'input_type_text')]//input[@name='name']")  # Поле для ввода email на странице входа
